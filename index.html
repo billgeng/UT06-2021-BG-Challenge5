@@ -3,126 +3,133 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Work Scheduler</title>
+    <title>Work Day Scheduler</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel='stylesheet' type='text/css' media='screen' href='./assets/style.css'>
-    <script src='./assets/script.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="header-container" id="header">
-        <div class="text-title">
+        <div class="text">
             <h1> Work Day Scheduler</h1>
-            <p> A simple calendar app for scheduling your work days </p>
+            <p> A simple calendar app for scheduling your work day </p>
 
-            <div class="timer" id="timer"></div>
+            <div class="timer" id="timer">timer</div>
 
         </div>
-    </div>
-
-    <hr>
-    
-    <div class="scheduler-container" id="scheduler">
-       <div id="9-row" class="row">
-           <div class="col-sm-4">
-               9Am
+    </div>     
+    <div class="container-fluid" id="scheduler-container">
+       <div id="9-row" class="row g-0 align-items-center ">
+           <div id="hour-box" class="col-md-1">
+               <p >9AM</p>
            </div>
-           <div class="col-sm-4">
-            <p>test</p>
+           <div id="text-box" class="col-10">
+           <input id ="text-9" type="text" class="form-control morning-text" name = "scheduleText" />
         </div>
-        <div class="col-sm-4">
-            <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
+        <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+            <button id="submitBtn" class="btn" ><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
         </div>
        </div>
-       <div id="10-row" class="row">
-        <div class="col-sm-4">
-            10Am
+
+       <div id="10-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p>10 AM</p> 
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="text-box" class="col-md-10">
+            <input id ="text-10" type="text" class="form-control morning-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="11-row" class="row">
-        <div class="col-sm-4">
-            11Am
+    </div>
+
+    <div id="11-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p>11 AM</p> 
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="text-box" class="col-md-10">
+            <input id ="text-11" type="text" class="form-control morning-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="12-row" class="row">
-        <div class="col-sm-4">
-            12Pm
+    </div>
+
+    <div id="12-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p> 12 PM</p>
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="lunch-box"class="col-md-10">
+            <input id ="text-12" type="text" class="form-control lunch-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="13-row" class="row">
-        <div class="col-sm-4">
-            1Pm
+    </div>
+
+    <div id="13-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p>1 PM</p> 
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="afterText-box" class="col-md-10">
+            <input id ="text-13" type="text" class="form-control after-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="14-row" class="row">
-        <div class="col-sm-4">
-            2Pm
+    </div>
+
+    <div id="14-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p> 2 PM</p>
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="afterText-box" class="col-md-10">
+            <input id ="text-14" type="text" class="form-control after-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="15-row" class="row">
-        <div class="col-sm-4">
-            3pm
+    </div>
+
+    <div id="15-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p>3 PM</p> 
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="afterText-box" class="col-md-10">
+            <input id ="text-15" type="text" class="form-control after-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="16-row" class="row">
-        <div class="col-sm-4">
-            4Pm
+    </div>
+
+    <div id="16-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p>4 PM</p> 
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="afterText-box" class="col-md-10">
+            <input id ="text-16" type="text" class="form-control after-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
-     </div>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
     </div>
-    <div id="17-row" class="row">
-        <div class="col-sm-4">
-            5Pm
+    </div>
+
+    <div id="17-row" class="row g-0 align-items-center">
+        <div class="col-md-1">
+           <p>5 PM</p> 
         </div>
-        <div class="col-sm-4">
-         <p>test</p>
+        <div id="afterText-box"class="col-md-10">
+            <input id ="text-17" type="text" class="form-control after-text">
      </div>
-     <div class="col-sm-4">
-         <i id="Add-button" class="bi bi-calendar-plus-fill"></i>
+     <div class="col-md-1 border boreder-2 border-primary" id="Btn-box">
+        <button id="submitBtn" class="btn"><i id="Add-button" class="bi bi-calendar-plus-fill"></i></button>
+    </div>
      </div>
     </div>
-    </div>
+    <script src='./assets/script.js'></script>
 </body>
 </html>

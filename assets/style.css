@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  justify-content: space-between;
+  text-align: center;
+}
+.header-container {
+  background-color: dodgerblue;
+  padding: 0;
+  margin: 0;
+}
+#scheduler-container {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-top: black solid 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+#9-row,
+#13-row {
+  padding: 10px;
+  margin: 20px;
+}
+#hour-box {
+  border-color: grey;
+  border: 4px;
+  border-top: grey dotted 2px;
+  border-right: grey solid 2px;
+}
+
+#Btn-box {
+  background-color: dodgerblue;
+  border-end-end-radius: 6px;
+  border-top-right-radius: 6px;
+}
+#submitBtn {
+  width: 100%;
+}
+
+.morning-text {
+  background-color: grey;
+  width: 100%;
+  height: 5vh;
+  color: honeydew;
+}
+
+.lunch-text {
+  background-color: tomato;
+}
+
+.after-text {
+  background-color: limegreen;
+}
