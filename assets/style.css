@@ -17,9 +17,17 @@
   height: 100%;
 }
 #9-row,
-#13-row {
+#10-row,
+#11-row,
+#12-row,
+#13-row,
+#14-row,
+#15-row,
+#16-row,
+#17-row {
   padding: 10px;
   margin: 20px;
+  color: azure;
 }
 #hour-box {
   border-color: grey;
